@@ -3,9 +3,7 @@
 from copy import copy
 from bs4 import BeautifulSoup #at least 4.4, for copy()
 from datetime import date, datetime, timedelta
-
-svg = open("template.svg","r")
-primordial_soup = BeautifulSoup(svg, "xml")
+import argparse
 
 def monday(year, week):
     """
@@ -20,27 +18,60 @@ def monday(year, week):
     return first_day + timedelta(days=-offset, weeks=week)
 
 
-def cook(year, week, prefix="planner-"):
-    soup = copy(primordial_soup)
+def cook(soup, first):
+    """
+    Manipulate the BeautifulSoup XML object by changing the strings to
+    correspond to the correct dates.
+    """
 
-    mon = monday(year, week)
-    tue = mon + timedelta(days=1)
-    wed = mon + timedelta(days=2)
-    thu = mon + timedelta(days=3)
-    fri = mon + timedelta(days=4)
-    sat = mon + timedelta(days=5)
-    sun = mon + timedelta(days=6)
+    soup.find(id="title").string=first.strftime("%B %Y, week %W")
 
-    soup.find(id="title").string=mon.strftime("%B %Y, week %W")
-    soup.find(id="mon").string="mon {}".format(mon.day)
-    soup.find(id="tue").string="tue {}".format(tue.day)
-    soup.find(id="wed").string="wed {}".format(wed.day)
-    soup.find(id="thu").string="thu {}".format(thu.day)
-    soup.find(id="fri").string="fri {}".format(fri.day)
-    soup.find(id="sat").string="sat {}".format(sat.day)
-    soup.find(id="sun").string="sun {}".format(sun.day)
+    for i, item in enumerate(["mon", "tue", "wed", "thu", "fri", "sat", "sun"]):
+        d = first + timedelta(days=i)
+        soup.find(id=item).string=d.strftime("%a %-d")
 
-    with open("{}{}-{}.svg".format(prefix, year, week), "w") as f:
-        f.write(str(soup))
+    return soup
 
-cook(2018, 41)
+
+
+if __name__ == "__main__":
+
+    year, week, _ = datetime.now().isocalendar()
+
+    parser = argparse.ArgumentParser(
+            description="Generate week planner in SVG format.",
+            formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument("-y", "--year", 
+        default=year, 
+        metavar="N", 
+        type=int,
+        help="First week planner's year.")
+    parser.add_argument("-w", "--week",
+        default=week, 
+        metavar="N", 
+        type=int,
+        help="Week number of first page.")
+    parser.add_argument("-n", "--number", 
+        default=1, 
+        metavar="N",
+        type=int,
+        help="Number of week planners to generate.")
+    parser.add_argument("-p", "--prefix", 
+        default="planner-", 
+        metavar="S", 
+        help="Filename prefix of generated files.")
+    args = parser.parse_args()
+
+    # Obtain template
+    svg = open("template.svg","r")
+    primordial_soup = BeautifulSoup(svg, "xml")
+
+    # Create week planners
+    for i in range(0, args.number):
+
+        fn = "{}{}.svg".format(args.prefix, i+1)
+        soup = cook(first=monday(args.year, args.week+i), soup=copy(primordial_soup))
+        
+        with open(fn, "w") as f:
+            f.write(str(soup))
