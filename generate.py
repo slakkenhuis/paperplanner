@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import ephem
+import pytz
 from copy import copy
 from bs4 import BeautifulSoup #at least 4.4, for copy()
 from datetime import date, datetime, timedelta
@@ -18,7 +20,7 @@ def monday(year, week):
     return first_day + timedelta(days=-offset, weeks=week)
 
 
-def cook(soup, first):
+def cook(soup, first, lat, lon):
     """
     Manipulate the BeautifulSoup XML object by changing the strings to
     correspond to the correct dates.
@@ -43,6 +45,20 @@ def cook(soup, first):
         d = first + timedelta(days=i)
         soup.find(id=item).string=d.strftime("%a %-d")
 
+
+
+
+    # Finally, move the sun icon. 0mm is 4am, 83.5mm is 4am the next day.
+    timeline_start = datetime.combine(first, datetime.min.time()) + timedelta(hours=4)
+    obs = ephem.Observer()
+    sun = ephem.Sun()
+    obs.date = first + (datetime.now() - datetime.utcnow())
+    obs.lat = str(lat)
+    obs.lon = str(lon)
+    sunrise = ephem.localtime(obs.next_rising(sun))
+    soup.find(id="sunrise")["x"] = str(((sunrise - timeline_start) /
+            timedelta(hours=24)) * 83.5)
+
     return soup
 
 
@@ -55,6 +71,17 @@ if __name__ == "__main__":
             description="Generate week planner in SVG format.",
             formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
+
+    parser.add_argument("-N", "--latitude", 
+        metavar="N", 
+        type=int,
+        required=True,
+        help="Latitude (for sunrise calculation).")
+    parser.add_argument("-E", "--longitude", 
+        metavar="N", 
+        type=int,
+        required=True,
+        help="Longitude (for sunrise calculation).")
     parser.add_argument("-y", "--year", 
         default=year, 
         metavar="N", 
@@ -84,7 +111,11 @@ if __name__ == "__main__":
     for i in range(0, args.number):
 
         fn = "{}{:03d}.svg".format(args.prefix, i+1)
-        soup = cook(first=monday(args.year, args.week+i), soup=copy(primordial_soup))
+        soup = cook(
+            first=monday(args.year, args.week+i),
+            soup=copy(primordial_soup),
+            lat=args.latitude,
+            lon=args.longitude)
         
         with open(fn, "w") as f:
             f.write(str(soup))

@@ -14,24 +14,25 @@ intentionally when my organizational habits are offline.
 My handwriting is very small, so for now, the script crams a whole week into a 
 single page, which has the dimensions 16.3cm × 10cm. The dividing lines 
 between the days have a 24-hour 'measuring tape' which allows me to mark 
-certain events or keep track of my sleeping times.
+certain events or keep track of my sleeping times. A little sun icon at the 
+top shows the approximate sunrise time for that week.
 
-The template right now is a first draft. I intend to write a script that 
-generates the pages with the correct dates, using something like 
-[pyephem](https://rhodesmill.org/pyephem/) for moving the little sun icon 
-according to calculated sunrise times for that week.
+
 
 Usage
 -------------------------------------------------------------------------------
 
 To generate the week planners, there is a Python script that uses 
 [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) to manipulate 
-the SVG. The single-page SVGs are converted to PDF with 
+the SVG, and [pyephem](https://rhodesmill.org/pyephem/) to calculate sunrise 
+times. The single-page SVGs are converted to PDF with 
 [Inkscape](https://inkscape.org), finally merging them into a single file with 
 [pdfunite](https://poppler.freedesktop.org/).
 
-    # Generate 10 single pages; see -h for details
-    ./generate.py -n 40
+Example:
+
+    # Generate 10 pages for the 52N 2E location; see -h for details
+    ./generate.py -n 10 -N 52 -E 2
 
     # Generate full planner
     make planner.pdf
