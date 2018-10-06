@@ -10,45 +10,45 @@
             <rect height="1.5" width=".2" y="0" x="19.5"/>
             <rect height="1.5" width=".2" y="0" x="23"/>
             <rect height="1.5" width=".2" y="0" x="26.5"/>
-            <rect height="2"   width=".5" y="0" x="30"/>
+            <rect height="2"   width=".4" y="0" x="30"/>
             <rect height="1.5" width=".2" y="0" x="33.5"/>
             <rect height="1.5" width=".2" y="0" x="37"/>
             <rect height="1.5" width=".2" y="0" x="40.5"/>
-            <rect height="2"   width=".5" y="0" x="44"/>
+            <rect height="2"   width=".4" y="0" x="44"/>
             <rect height="1.5" width=".2" y="0" x="47.5"/>
             <rect height="1.5" width=".2" y="0" x="51"/>
             <rect height="1.5" width=".2" y="0" x="54.5"/>
-            <rect height="2"   width=".5" y="0" x="58"/>
+            <rect height="2"   width=".4" y="0" x="58"/>
             <rect height="1.5" width=".2" y="0" x="61.5"/>
             <rect height="1.5" width=".2" y="0" x="65"/>
             <rect height="1.5" width=".2" y="0" x="68.5"/>
-            <rect height="2"   width=".5" y="0" x="72"/>
+            <rect height="2"   width=".4" y="0" x="72"/>
             <rect height="1.5" width=".2" y="0" x="75.5"/>
             <rect height="1.5" width=".2" y="0" x="79"/>
             <rect height="1.5" width=".2" y="0" x="82.5"/>
-            <rect height="2"   width=".5" y="0" x="86"/>
+            <rect height="2"   width=".4" y="0" x="86"/>
             <rect height="1.5" width=".2" y="0" x="89.5"/>
             <rect height="1.5" width=".2" y="0" x="93"/>
             <rect height="1.5" width=".2" y="0" x="96.5"/>
-            <rect height=".5" width=".5" y="0" x="12.5"/>
-            <rect height=".5" width=".5" y="0" x="13.5"/>
-            <rect height=".5" width=".5" y="0" x="14.5"/>
-            <rect height=".5" width=".5" y="0" x="15.5"/>
-            <rect height=".5" width="83.5" y="0" x="16.5"/>
+            <rect height=".2" width=".5" y="0" x="12.5"/>
+            <rect height=".2" width=".5" y="0" x="13.5"/>
+            <rect height=".2" width=".5" y="0" x="14.5"/>
+            <rect height=".2" width=".5" y="0" x="15.5"/>
+            <rect height=".2" width="83.5" y="0" x="16.5"/>
         </g>
         <g font-size="2.5px" font-family="EB Garamond SC" fill="#000000">
-            <text><tspan y="2.5" x="31">8</tspan></text>
-            <text><tspan y="2.5" x="45">12</tspan></text>
-            <text><tspan y="2.5" x="59">16</tspan></text>
-            <text><tspan y="2.5" x="73">20</tspan></text>
-            <text><tspan y="2.5" x="87">0</tspan></text>
+            <text><tspan y="2" x="30.8">8</tspan></text>
+            <text><tspan y="2" x="44.8">12</tspan></text>
+            <text><tspan y="2" x="58.8">16</tspan></text>
+            <text><tspan y="2" x="72.8">20</tspan></text>
+            <text><tspan y="2" x="86.8">0</tspan></text>
         </g>
     </g>
 
 
     <g id="title">
-        <text y="5" x="99" text-anchor="end" font-family="EB Garamond SC" font-size="4px">
-            <tspan>october 2018, week 40</tspan>
+        <text y="5" x="99" text-anchor="end" font-family="EB Garamond SC" font-size="3.5px">
+            <tspan>October 2018, week 40</tspan>
         </text>
     </g>
 
