@@ -24,8 +24,21 @@ def cook(soup, first):
     correspond to the correct dates.
     """
 
-    soup.find(id="title").string=first.strftime("%B %Y, week %W")
+    last = first + timedelta(days=6)
 
+    if first.month == last.month:
+        months = first.strftime("%B")
+    else:
+        months = "{}-{}".format(first.strftime("%B"),last.strftime("%B"))
+
+    if first.year == last.year:
+        years = first.strftime("%Y")
+    else:
+        years = "{}/{}".format(first.strftime("%Y"), last.strftime("%y"))
+
+    week = first.strftime("week %-W")
+
+    soup.find(id="title").string="{} {}, {}".format( months, years, week )
     for i, item in enumerate(["mon", "tue", "wed", "thu", "fri", "sat", "sun"]):
         d = first + timedelta(days=i)
         soup.find(id=item).string=d.strftime("%a %-d")
