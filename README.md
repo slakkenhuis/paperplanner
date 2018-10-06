@@ -1,15 +1,15 @@
 paperplanner
 ===============================================================================
 
-This repository contains the template for the week planner I use in my A6 
+This repository contains the template for the week planner I use in my 
 notebook.
 
-The notebook has a ring binder and tabs. This workflow works very well for me: 
-it gives me a single object that carries all my schedule and notes; my 
-fountain pen fits neatly into the rings; scrap paper can be given a second 
-life by cutting it into the right size; and the pages can be freely rearranged 
-or increased. I also find that it's easier to act intentionally with offline 
-organizational habits.
+The notebook is more or less A6 size, has a ring binder, and tabs. This works 
+very well for me: it makes for a single object that carries all my schedule 
+and notes; my fountain pen fits neatly into the rings; scrap paper can be 
+given a second life by cutting it into the right size; and the pages can be 
+freely rearranged or increased. I also find that it's easier to act 
+intentionally when my organizational habits are offline.
 
 My handwriting is very small, so for now, the script crams a whole week into a 
 single page, which has the dimensions 16.3cm × 10cm. The dividing lines 
