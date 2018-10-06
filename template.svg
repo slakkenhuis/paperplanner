@@ -1,115 +1,105 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="162mm" width="100mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 100 162">
-
+<style type="text/css" >
+    <![CDATA[
+        rect, path, text {
+            fill: #000;
+        }
+        text {
+            font-family: "EB Garamond SC";
+        }
+        text#title {
+            font-size: 3.5px;
+            text-anchor: end;
+        }
+        .day text {
+            font-size: 4px;
+            text-anchor: end;
+            writing-mode: tb-rl;
+        }
+        #timeline {
+            font-size: 2.5px;
+        }
+    ]]>
+</style>
 <defs>
 
     <path id="sunrise" d="M16.5 -4l-.35.792a1.75 1.75 0 0 0-.332.108l-.767-.423.166.86a1.75 1.75 0 0 0-.206.282l-.868.108.637.596a1.75 1.75 0 0 0-.009.177h.5a1.25 1.25 0 0 1 1.25-1.25 1.25 1.25 0 0 1 1.25 1.25h.5a1.75 1.75 0 0 0-.01-.175l.637-.598-.868-.108a1.75 1.75 0 0 0-.205-.283l.166-.859-.766.422a1.75 1.75 0 0 0-.333-.108z" />
 
     <g id="timeline">
-        <g>
-            <rect height="1.5" width=".2" y="0" x="19.5"/>
-            <rect height="1.5" width=".2" y="0" x="23"/>
-            <rect height="1.5" width=".2" y="0" x="26.5"/>
-            <rect height="2"   width=".4" y="0" x="30"/>
-            <rect height="1.5" width=".2" y="0" x="33.5"/>
-            <rect height="1.5" width=".2" y="0" x="37"/>
-            <rect height="1.5" width=".2" y="0" x="40.5"/>
-            <rect height="2"   width=".4" y="0" x="44"/>
-            <rect height="1.5" width=".2" y="0" x="47.5"/>
-            <rect height="1.5" width=".2" y="0" x="51"/>
-            <rect height="1.5" width=".2" y="0" x="54.5"/>
-            <rect height="2"   width=".4" y="0" x="58"/>
-            <rect height="1.5" width=".2" y="0" x="61.5"/>
-            <rect height="1.5" width=".2" y="0" x="65"/>
-            <rect height="1.5" width=".2" y="0" x="68.5"/>
-            <rect height="2"   width=".4" y="0" x="72"/>
-            <rect height="1.5" width=".2" y="0" x="75.5"/>
-            <rect height="1.5" width=".2" y="0" x="79"/>
-            <rect height="1.5" width=".2" y="0" x="82.5"/>
-            <rect height="2"   width=".4" y="0" x="86"/>
-            <rect height="1.5" width=".2" y="0" x="89.5"/>
-            <rect height="1.5" width=".2" y="0" x="93"/>
-            <rect height="1.5" width=".2" y="0" x="96.5"/>
-            <rect height=".2" width=".5" y="0" x="12.5"/>
-            <rect height=".2" width=".5" y="0" x="13.5"/>
-            <rect height=".2" width=".5" y="0" x="14.5"/>
-            <rect height=".2" width=".5" y="0" x="15.5"/>
-            <rect height=".2" width="83.5" y="0" x="16.5"/>
-        </g>
-        <g font-size="2.5px" font-family="EB Garamond SC" fill="#000000">
-            <text><tspan y="2" x="30.8">8</tspan></text>
-            <text><tspan y="2" x="44.8">12</tspan></text>
-            <text><tspan y="2" x="58.8">16</tspan></text>
-            <text><tspan y="2" x="72.8">20</tspan></text>
-            <text><tspan y="2" x="86.8">0</tspan></text>
-        </g>
+        <rect height="1.5" width=".2" y="0" x="19.5"/>
+        <rect height="1.5" width=".2" y="0" x="23"/>
+        <rect height="1.5" width=".2" y="0" x="26.5"/>
+        <rect height="2"   width=".4" y="0" x="30"/>
+        <rect height="1.5" width=".2" y="0" x="33.5"/>
+        <rect height="1.5" width=".2" y="0" x="37"/>
+        <rect height="1.5" width=".2" y="0" x="40.5"/>
+        <rect height="2"   width=".4" y="0" x="44"/>
+        <rect height="1.5" width=".2" y="0" x="47.5"/>
+        <rect height="1.5" width=".2" y="0" x="51"/>
+        <rect height="1.5" width=".2" y="0" x="54.5"/>
+        <rect height="2"   width=".4" y="0" x="58"/>
+        <rect height="1.5" width=".2" y="0" x="61.5"/>
+        <rect height="1.5" width=".2" y="0" x="65"/>
+        <rect height="1.5" width=".2" y="0" x="68.5"/>
+        <rect height="2"   width=".4" y="0" x="72"/>
+        <rect height="1.5" width=".2" y="0" x="75.5"/>
+        <rect height="1.5" width=".2" y="0" x="79"/>
+        <rect height="1.5" width=".2" y="0" x="82.5"/>
+        <rect height="2"   width=".4" y="0" x="86"/>
+        <rect height="1.5" width=".2" y="0" x="89.5"/>
+        <rect height="1.5" width=".2" y="0" x="93"/>
+        <rect height="1.5" width=".2" y="0" x="96.5"/>
+        <rect height=".2" width=".5" y="0" x="12.5"/>
+        <rect height=".2" width=".5" y="0" x="13.5"/>
+        <rect height=".2" width=".5" y="0" x="14.5"/>
+        <rect height=".2" width=".5" y="0" x="15.5"/>
+        <rect height=".2" width="83.5" y="0" x="16.5"/>
+        <text y="2" x="30.8">8</text>
+        <text y="2" x="44.8">12</text>
+        <text y="2" x="58.8">16</text>
+        <text y="2" x="72.8">20</text>
+        <text y="2" x="86.8">0</text>
     </g>
 
 
-    <g id="title">
-        <text y="5" x="99" text-anchor="end" font-family="EB Garamond SC" font-size="3.5px">
-            <tspan>October 2018, week 40</tspan>
-        </text>
-    </g>
+    <text y="5" x="99" text-anchor="end" id="title">
+        October 2018, week 40
+    </text>
 
-    <g id="monday" fill="#000000" font-family="EB Garamond SC" font-size="4px">
-        <text y="18" x="14" text-anchor="end" writing-mode="tb-rl">
-            <tspan>mon 8</tspan>
-        </text>
+    <g id="monday" class="day">
+        <text y="18" x="14">mon 8</text>
         <use x="0" y="-0.5" xlink:href="#timeline" />
-        <use x="0" y="0" xlink:href="#helper" />
     </g>
 
-    <g id="tuesday" fill="#000000" font-family="EB Garamond SC" font-size="4px">
-        <text y="18" x="14" text-anchor="end" writing-mode="tb-rl">
-            <tspan>tue 9</tspan>
-        </text>
+    <g id="tuesday" class="day">
+        <text y="18" x="14">tue 9</text>
         <use x="0" y="-0.5" xlink:href="#timeline" />
-        <use x="0" y="0" xlink:href="#helper" />
     </g>
 
-    <g id="wednesday" fill="#000000" font-family="EB Garamond SC" font-size="4px">
-        <text y="18" x="14" text-anchor="end" writing-mode="tb-rl">
-            <tspan>wed 10</tspan>
-        </text>
+    <g id="wednesday" class="day">
+        <text y="18" x="14">wed 10</text>
         <use x="0" y="-0.5" xlink:href="#timeline" />
-        <use x="0" y="0" xlink:href="#helper" />
     </g>
 
-    <g id="thursday" fill="#000000" font-family="EB Garamond SC" font-size="4px">
-        <text y="18" x="14" text-anchor="end" writing-mode="tb-rl">
-            <tspan>thu 11</tspan>
-        </text>
+    <g id="thursday" class="day">
+        <text y="18" x="14">thu 11</text>
         <use x="0" y="-0.5" xlink:href="#timeline" />
-        <use x="0" y="0" xlink:href="#helper" />
     </g>
 
-    <g id="friday" fill="#000000" font-family="EB Garamond SC" font-size="4px">
-        <text y="18" x="14" text-anchor="end" writing-mode="tb-rl">
-            <tspan>fri 12</tspan>
-        </text>
+    <g id="friday" class="day">
+        <text y="18" x="14">fri 12</text>
         <use x="0" y="-0.5" xlink:href="#timeline" />
-        <use x="0" y="0" xlink:href="#helper" />
     </g>
 
-    <g id="saturday" fill="#000000" font-family="EB Garamond SC" font-size="4px">
-        <text y="18" x="14" text-anchor="end" writing-mode="tb-rl">
-            <tspan>sat 13</tspan>
-        </text>
+    <g id="saturday" class="day">
+        <text y="18" x="14">sat 13</text>
         <use x="0" y="-0.5" xlink:href="#timeline" />
-        <use x="0" y="0" xlink:href="#helper" />
     </g>
 
-    <g id="sunday" fill="#000000" font-family="EB Garamond SC" font-size="4px">
-        <text y="18" x="14" text-anchor="end" writing-mode="tb-rl">
-            <tspan>sun 14</tspan>
-        </text>
+    <g id="sunday" class="day">
+        <text y="18" x="14">sun 14</text>
         <use x="0" y="-0.5" xlink:href="#timeline" />
-        <use x="0" y="0" xlink:href="#helper" />
-    </g>
-
-    <g id="helper" fill-opacity="0">
-        <rect height="20" width="87" y="0" x="13"/>
     </g>
 </defs>
 
