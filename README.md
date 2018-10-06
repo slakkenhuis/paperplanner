@@ -21,6 +21,21 @@ generates the pages with the correct dates, using something like
 [pyephem](https://rhodesmill.org/pyephem/) for moving the little sun icon 
 according to calculated sunrise times for that week.
 
+Usage
+-------------------------------------------------------------------------------
+
+To generate the week planners, there is a Python script that uses 
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) to manipulate 
+the SVG. The single-page SVGs are converted to PDF with 
+[Inkscape](https://inkscape.org), finally merging them into a single file with 
+[pdfunite](https://poppler.freedesktop.org/).
+
+    # Generate 10 single pages; see -h for details
+    ./generate.py -n 40
+
+    # Generate full planner
+    make planner.pdf
+
 
 Alternatives
 -------------------------------------------------------------------------------

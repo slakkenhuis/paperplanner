@@ -70,7 +70,7 @@ if __name__ == "__main__":
     # Create week planners
     for i in range(0, args.number):
 
-        fn = "{}{}.svg".format(args.prefix, i+1)
+        fn = "{}{:03d}.svg".format(args.prefix, i+1)
         soup = cook(first=monday(args.year, args.week+i), soup=copy(primordial_soup))
         
         with open(fn, "w") as f:
