@@ -38,6 +38,17 @@ Example:
     make planner.pdf
 
 
+
+On a Debian system, the following will install everything that the makefile 
+asks for:
+
+    sudo apt install \
+        inkscape poppler-utils fonts-ebgaramond-extra python-pip3 \
+        cups-client gvfs-bin
+
+    pip3 install beautifulsoup4 lxml pyephem
+
+
 Alternatives
 -------------------------------------------------------------------------------
 

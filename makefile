@@ -7,4 +7,7 @@ planner.pdf:$(sort $(patsubst %.svg,%.pdf,$(wildcard planner-*.svg)))
 clean: 
 	gvfs-trash planner-*
 
-.PHONY: clean
+print: planner.pdf
+	lp -o media=a4 -o number-up=2 -o number-up-layout=rl -o page-ranges=1-2 -o sides=one-sided $<
+
+.PHONY: clean print
